@@ -9,7 +9,7 @@ function SocketProvider({ children }) {
   const [socket, setSocket] = useState();
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3001");
+    const newSocket = io("https://onlinewebapp230698-9d5c4d4bfc71.herokuapp.com/");
     setSocket(newSocket);
 
     return () => {
