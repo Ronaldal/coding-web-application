@@ -4,14 +4,16 @@ const http = require("http");
 const socketIO = require("socket.io");
 const cors = require("cors");
 const codeRoutes = require("./routes/codeRouter");
+const path = require("path");
 const { log } = require("console");
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/code", codeRoutes);
+app.use(express.static(path.join(__dirname + "/public")));
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const MAX_STUDENTS = 1;
 
 const server = http.createServer(app);
