@@ -14,7 +14,7 @@ const CodeBlock = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/code/${codeBlockId}`)
+      .get(`https://onlinewebapp230698-9d5c4d4bfc71.herokuapp.com/code/${codeBlockId}`)
       .then((response) => {
         console.log("Data fetched: ", response.data);
         setCode(response.data);
