@@ -9,7 +9,9 @@ function SocketProvider({ children }) {
   const [socket, setSocket] = useState();
 
   useEffect(() => {
-    const newSocket = io("https://onlinewebapp230698-9d5c4d4bfc71.herokuapp.com/");
+    const newSocket = io(
+      "https://onlinecodingappp230698-a6f964b69b49.herokuapp.com/"
+    );
     setSocket(newSocket);
 
     return () => {
