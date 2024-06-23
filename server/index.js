@@ -5,6 +5,8 @@ const socketIO = require("socket.io");
 const cors = require("cors");
 const codeRoutes = require("./routes/codeRouter");
 const path = require("path");
+const mongoose = require("mongoose");
+
 const { log } = require("console");
 
 app.use(cors());
@@ -13,9 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/code", codeRoutes);
 app.use(express.static(path.join(__dirname + "/public")));
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8000;
 const MAX_STUDENTS = 1;
-
+const uri =
+  "mongodb+srv://roni230698:hHWXoyaeZhcAVsQE@code-block-db.xxsqt9z.mongodb.net/?retryWrites=true&w=majority&appName=code-block-db";
 const server = http.createServer(app);
 
 const io = socketIO(server, {
@@ -133,6 +136,13 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log("Server is runing on port 3001..");
+// server.listen(PORT, () => {
+//   console.log("Server is runing on port 3001..");
+// });
+
+mongoose.connect(uri).then(() => {
+  console.log("Connected to MongoDB successfully");
+  server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
 });
