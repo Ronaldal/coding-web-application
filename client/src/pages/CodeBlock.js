@@ -5,7 +5,9 @@ import { useSocket } from "../contexts/SocketProvider";
 import Code from "../components/Code";
 
 /*This React component fetches code data based on a dynamic codeBlockId parameter from the server using Axios. 
- It also establishes a WebSocket connection through useSocket hook to allow real-time collaboration, distinguishing between mentor and student roles, and updating code changes accordingly. */
+ It also establishes a WebSocket connection through useSocket hook to allow real-time collaboration, 
+ distinguishing between mentor and student roles, and updating code changes accordingly. 
+ */
 const CodeBlock = () => {
   const { codeBlockId } = useParams();
   const { socket } = useSocket();
@@ -14,7 +16,9 @@ const CodeBlock = () => {
 
   useEffect(() => {
     axios
-      .get(`https://onlinewebapp230698-9d5c4d4bfc71.herokuapp.com/code/${codeBlockId}`)
+      .get(
+        `https://onlinecodingappp230698-a6f964b69b49.herokuapp.com/code/${codeBlockId}`
+      )
       .then((response) => {
         console.log("Data fetched: ", response.data);
         setCode(response.data);
