@@ -1,16 +1,13 @@
 const express = require("express");
-const codeBlocks = require("./CodeBlockData");
-const router = express.Router();
+const codeBlocksModel = require("./CodeBlocks");
 
-function findCodeBlockById(id) {
-  return codeBlocks.find((codeBlock) => codeBlock.id === id);
-}
+const router = express.Router();
 
 router.get(`/:id`, async (req, res) => {
   const id = req.params.id;
   console.log("GET request", id);
   try {
-    const result = findCodeBlockById(id);
+    const result = await codeBlocksModel.findOne({ id: id });
     console.log("GET request for code block ", id);
     console.log("code ", result);
     if (result) {
