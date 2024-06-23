@@ -15,3 +15,9 @@ This web application facilitates remote coding sessions between mentors and stud
    - Student view: Allows the student to modify the code.
    - Real-time code changes via Socket communication.
    - Syntax highlighting using CodeMirror.
+## Backend:
+   - Implemented in JavaScript.
+   - Uses MongoDB to store and retrieve data.
+
+## Frontend:
+   - Built with React.
