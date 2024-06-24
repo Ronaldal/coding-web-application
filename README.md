@@ -1,5 +1,5 @@
 # Online coding web application
-[Click here to go to the web site!](https://onlinecodingappp230698-a6f964b69b49.herokuapp.com/)
+[Click here to go to the website!](https://onlinecodingappp230698-a6f964b69b49.herokuapp.com/)
 
 online coding web application in react and js
 This web application facilitates remote coding sessions between mentors and students, allowing real-time collaboration and observation of code changes. The frontend is built with React, and the backend is implemented in JavaScript.It consists of two main pages:
